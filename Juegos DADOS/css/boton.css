@@ -1,0 +1,33 @@
+.custom-input {
+    width: 30%; /* O ajusta a un ancho fijo como 200px */
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Ajusta el borde redondeado */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.custom-input:focus {
+    outline: none;
+    border-color: #007bff; /* Cambia el color del borde en foco */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+/* Margen general entre botones */
+.button-spacing {
+    margin-bottom: 15px; /* Ajusta el valor según tus necesidades */
+}
+
+/* Media query para pantallas móviles */
+@media (max-width: 768px) {
+    .button-spacing {
+        margin-bottom: 20px; /* Más margen en pantallas pequeñas */
+    }
+
+    .btn {
+        width: 90%; /* Opcional: ajusta el ancho de los botones */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="css/dados.css">
+    <link rel="stylesheet" href="css/boton.css">
+
+    <title>Juego de Dados - Multijugador</title>
+
+  <style>
+   
+
+    /* Ajustar el espaciado entre dados */
+    #dadosJugador1 img,
+    #dadosJugador2 img {
+        margin: 10px;
+    }
+
+    /* Reducir el tamaño y aumentar el margen si hay más de 4 dados */
+    .dado.multiple {
+        width: 100px;
+        height: 100px;
+        margin: 15px;
+    }
+</style>
+
+
+</head>
+
+<body>
+    <nav class="navbar bg-dark text-white">
+        <a class="navbar-brand">Juego de Dados</a>
+        <div class="form-inline">
+            <button class="btn ml-2 btn-outline-success" onclick="location.reload()">REINICIAR</button>
+        </div>
+    </nav>
+    
+    <div class="container content-main mt-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-12">
+                <h3>LANZAMIENTO DE DADOS</h3>
+            </div>
+            <div class="col-12">
+                <p>Lanza los dados, registra los resultados y compite contra otro jugador o la máquina.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center text-center my-4">
+            <div class="col-md-4 button-spacing col-12">
+                <button class="btn btn-primary btn-block" onclick="confirmarCambioModalidad(1)">Un jugador vs Máquina</button>
+            </div>
+            <div class="col-md-4 button-spacing col-12">
+                <button class="btn btn-secondary btn-block" onclick="confirmarCambioModalidad(2)">Dos jugadores</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 text-center">
+                <h5>Jugador 1</h5>
+                <div id="dadosJugador1" class="dados-container"></div>
+                <p id="sumaJugador1">Suma: 0</p>
+            </div>
+            <div class="col-6 text-center">
+                <h5 id="nombreJugador2">Máquina</h5>
+                <div id="dadosJugador2" class="dados-container"></div>
+                <p id="sumaJugador2">Suma: 0</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center text-center my-4">
+            <div class="col-12">
+                <label for="cantidadDados">Cantidad de Dados:</label>
+                <input type="number" id="cantidadDados" value="1" min="1" max="6" class="custom-input" placeholder="Cantidad de Dados">
+            </div>
+        </div>
+
+        <div class="row justify-content-center text-center my-4">
+            <div class="col-12">
+                <button class="btn btn-success" onclick="generarDados()">Lanzar Dados</button>
+            </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+            <div class="col-12">
+                <h4 id="resultado">Esperando jugada...</h4>
+            </div>
+        </div>
+ 
+        <div class="row justify-content-center text-center">
+            <div class="col-12">
+                <h4>Historial de Jugadas</h4>
+                <ul id="historial" class="list-group"></ul>
+            </div>
+        </div>
+
+        <!-- Botón para ver el historial -->
+        <div class="row justify-content-center text-center my-4">
+            <div class="col-12">
+                <a href="historial.html" class="btn btn-info">Ver Historial</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Main JS -->
+<script src="js/num-aleatorio.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/estilosdados.js"></script>
+
+</body>
+ 
+
+
+<!-- Main JS -->
+        <script src="js/num-aleatorio.js"></script>
+        <script src="js/audio.js"></script>
+        <script src="js/estilosdados.js"></script>
+    
+

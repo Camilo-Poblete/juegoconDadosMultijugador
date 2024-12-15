@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ededed; /* Fondo claro para todo el cuerpo */
+    color: black; /* Texto negro por defecto */
+}
+
+/* Contenedor de los dados */
+.dados-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio reducido entre los dados */
+    margin-top: 30px;
+}
+
+/* Contenedor adicional que envuelve cada dado (tarjeta) */
+.dado-container {
+    background-color: transparent; /* Fondo transparente para la tarjeta */
+    padding: 10px; /* Espaciado opcional alrededor del dado */
+    border-radius: 10px; /* Bordes redondeados para la tarjeta */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para la tarjeta */
+}
+
+/* Estilo base para los dados */
+.dado {
+    width: 200px; /* Tamaño fijo */
+    height: 200px; /* Mantener proporción */
+    background-color: transparent; /* Fondo transparente para los dados */
+    border: 2px solid black; /* Bordes negros */
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    font-size: 5rem; /* Tamaño de los puntos */
+    font-weight: bold;
+    color: black; /* Color de los puntos */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    animation: girarDado 1s ease-in-out;
+}
+
+/* Estilos para el modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .dado {
+        border: 2px solid #777; /* Bordes grises para el modo oscuro */
+        color: white; /* Puntos blancos en los dados */
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra más suave para el modo oscuro */
+    }
+
+    .dado-container {
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra más suave para la tarjeta */
+    }
+}
+
+/* Animación de los dados */
+@keyframes girarDado {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(1800deg); /* Hace girar el dado 5 veces */
+    }
+    100% {
+        transform: rotate(3600deg); /* Vuelve a la posición inicial */
+    }
+}
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+    .dados-container {
+        flex-direction: row; /* Los dados se alinean horizontalmente */
+        gap: 8px; /* Espacio reducido entre los dados */
+        margin-top: 10px;
+    }
+
+    .dado {
+        width: 150px; /* Dados más pequeños */
+        height: 150px;
+        font-size: 4rem; /* Tamaño reducido para puntos */
+        animation: girarDado 0.8s ease-in-out; /* Animación más rápida */
+    }
+}
+
+/* Estilo para pantallas más grandes (escritorio) */
+@media screen and (min-width: 769px) {
+    .dados-container {
+        flex-direction: row; /* Alineación horizontal de los dados */
+        gap: 10px; /* Espacio moderado entre los dados */
+    }
+
+    .dado {
+        width: 200px; /* Tamaño más grande para los dados */
+        height: 195px;
+        font-size: 5rem; /* Tamaño de puntos más grande */
+    }
+}
